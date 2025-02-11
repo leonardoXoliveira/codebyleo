@@ -1,1 +1,4 @@
-npx --no -- commitlint --edit $1
+echo "\n📝 Checking your commit message... 📝"
+echo "Let's make sure your message is clear and follows the guidelines!"
+
+npm run commitlint ${1}
