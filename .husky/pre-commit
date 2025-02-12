@@ -5,4 +5,4 @@ pnpm lint:fix
 pnpm format
 
 echo "\n✅ Code is clean and formatted! ✅"
-echo "🚀 Ready to commit! 🚀"
+echo "🚀 Ready to commit! 🚀\n"

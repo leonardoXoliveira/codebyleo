@@ -1,5 +1,5 @@
 {
-  "type": "module",
+  "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
