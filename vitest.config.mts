@@ -1,8 +1,8 @@
-import react from '@vitejs/plugin-react';
-import path from 'path';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import react from '@vitejs/plugin-react'
+import path from 'path'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
-import { defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
@@ -11,15 +11,16 @@ export default defineConfig({
     globals: true,
     setupFiles: './vitest.setup.mts',
     include: ['src/**/*.spec.{js,ts,jsx,tsx}'],
+    exclude: [...configDefaults.exclude, 'src/e2e/**'],
     coverage: {
-      reporter: ['text', 'json', 'html'],
-      include: ['src/**/*.{js,ts,jsx,tsx}'],
+      reporter: ['text', 'html'],
+      include: ['src/**/*.{js,ts,jsx,tsx}']
     },
-    reporters: ['verbose'],
+    reporters: ['verbose']
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'),
-    },
-  },
-});
+      '@': path.resolve(__dirname, 'src')
+    }
+  }
+})
