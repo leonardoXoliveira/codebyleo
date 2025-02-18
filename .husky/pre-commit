@@ -1,8 +1,8 @@
 echo "\n🔍 Linting your code... 🔍"
 echo "Let's ensure your code is clean, consistent, and error-free!"
 
-eslint --fix --cache
-prettier --write
+pnpm lint:fix
+pnpm format
 
 echo "\n✅ Code is clean and formatted! ✅"
 echo "🚀 Ready to commit! 🚀\n"
