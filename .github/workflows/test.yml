@@ -2,10 +2,6 @@ name: Tests
 
 on:
   workflow_call:
-    paths-ignore:
-      - '**.md'
-      - '.husky/**'
-      - '.vscode/**'
 
 jobs:
   test:
