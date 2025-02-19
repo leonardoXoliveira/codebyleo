@@ -1,8 +1,9 @@
 'use client'
 
+import autoAnimate from '@formkit/auto-animate'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { MenuMobile } from '@/components/menu-mobile'
 import { Navigation } from '@/components/navigation'
@@ -12,6 +13,7 @@ import { NameTransition } from './name'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const parent = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -36,6 +38,12 @@ export function Header() {
     return () => document.removeEventListener('keydown', handleEscape)
   }, [isMenuOpen])
 
+  useEffect(() => {
+    if (parent.current) {
+      autoAnimate(parent.current, { duration: 100 })
+    }
+  }, [])
+
   const handleCloseMenu = useCallback(() => {
     setIsMenuOpen(false)
   }, [])
@@ -43,10 +51,10 @@ export function Header() {
   return (
     <>
       <header
-        className="sticky top-0 z-50 w-full p-4 backdrop-blur-sm"
+        className="sticky top-0 z-50 w-full backdrop-blur-sm"
         role="banner"
       >
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between p-4">
           <Link
             href="/"
             className="scroll-m-20 text-2xl font-semibold"
@@ -77,7 +85,9 @@ export function Header() {
         </div>
       </header>
 
-      {isMenuOpen && <MenuMobile onNavigate={handleCloseMenu} />}
+      <div ref={parent}>
+        {isMenuOpen && <MenuMobile onNavigate={handleCloseMenu} />}
+      </div>
     </>
   )
 }
