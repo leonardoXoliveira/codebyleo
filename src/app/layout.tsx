@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import { unstable_ViewTransition as ViewTransition } from 'react'
 
+import { Header } from '@/components/header'
 import { ThemeProvider } from '@/components/theme-provider'
 
 import type { Metadata } from 'next'
@@ -38,7 +39,8 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="mx-auto w-full max-w-7xl px-4">
+            <Header />
+            <main className="mx-auto w-full max-w-6xl px-4 py-12">
               <ViewTransition name="auto">{children}</ViewTransition>
             </main>
           </ThemeProvider>
