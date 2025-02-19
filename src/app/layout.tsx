@@ -1,7 +1,9 @@
-import { ThemeProvider } from '@/components/theme-provider'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { unstable_ViewTransition as ViewTransition } from 'react'
+
+import { ThemeProvider } from '@/components/theme-provider'
+
+import type { Metadata } from 'next'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} bg-background text-foreground antialised tracking-tight`}
+        className={`${inter.className} antialised bg-background tracking-tight text-foreground`}
       >
         <div className="min-h-screen w-full">
           <ThemeProvider
