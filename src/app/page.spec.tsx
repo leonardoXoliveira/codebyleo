@@ -6,6 +6,6 @@ import Page from './page'
 describe('Page', () => {
   it('SHOULD render', () => {
     render(<Page />)
-    expect(screen.getByText('New Hello World')).toBeInTheDocument()
+    expect(screen.getByText('Hello World')).toBeInTheDocument()
   })
 })
