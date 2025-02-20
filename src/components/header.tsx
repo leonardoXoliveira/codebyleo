@@ -2,13 +2,13 @@
 
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 
 import { MenuMobile } from '@/components/menu-mobile'
 import { Navigation } from '@/components/navigation'
 import { Button } from '@/components/ui/button'
 
-import { usePathname } from 'next/navigation'
 import { NameTransition } from './name'
 
 export function Header() {

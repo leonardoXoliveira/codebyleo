@@ -1,7 +1,8 @@
 'use client'
-import { cn } from '@/lib/utils'
 import { motion, stagger, useAnimate } from 'framer-motion'
 import { useEffect } from 'react'
+
+import { cn } from '@/lib/utils'
 
 export const TextGenerateEffect = ({
   words,
@@ -16,7 +17,7 @@ export const TextGenerateEffect = ({
 }) => {
   const [scope, animate] = useAnimate()
 
-  let wordsArray = words.split(' ')
+  const wordsArray = words.split(' ')
   useEffect(() => {
     animate(
       'span',
