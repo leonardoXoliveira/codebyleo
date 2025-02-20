@@ -1,9 +1,9 @@
 'use client'
 
-import autoAnimate from '@formkit/auto-animate'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { useCallback, useEffect, useState } from 'react'
 
 import { MenuMobile } from '@/components/menu-mobile'
 import { Navigation } from '@/components/navigation'
@@ -13,19 +13,7 @@ import { NameTransition } from './name'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const parent = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isMenuOpen])
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -37,12 +25,6 @@ export function Header() {
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
   }, [isMenuOpen])
-
-  useEffect(() => {
-    if (parent.current) {
-      autoAnimate(parent.current, { duration: 100 })
-    }
-  }, [])
 
   const handleCloseMenu = useCallback(() => {
     setIsMenuOpen(false)
@@ -61,7 +43,7 @@ export function Header() {
             aria-label="Go to home page"
             onClick={handleCloseMenu}
           >
-            <NameTransition />
+            <NameTransition isHomePage={pathname === '/'} />
           </Link>
 
           <Navigation variant="desktop" />
@@ -85,9 +67,7 @@ export function Header() {
         </div>
       </header>
 
-      <div ref={parent}>
-        {isMenuOpen && <MenuMobile onNavigate={handleCloseMenu} />}
-      </div>
+      {isMenuOpen && <MenuMobile onNavigate={handleCloseMenu} />}
     </>
   )
 }

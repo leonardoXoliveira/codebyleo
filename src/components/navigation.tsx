@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 
 export type NavigationItem = {
   href: string
@@ -14,12 +13,12 @@ const navigationItems: NavigationItem[] = [
     text: 'About Me'
   },
   {
-    href: '/post',
+    href: '/writing',
     label: 'Go to writing page',
     text: 'Writing'
   },
   {
-    href: '/projects',
+    href: '/code',
     label: 'Go to code page',
     text: 'Code'
   }
@@ -31,8 +30,6 @@ type NavigationProps = {
 }
 
 export function Navigation({ variant, onNavigate }: NavigationProps) {
-  const pathname = usePathname()
-
   return (
     <nav
       className={
@@ -47,9 +44,7 @@ export function Navigation({ variant, onNavigate }: NavigationProps) {
         <Link
           key={href}
           href={href}
-          className={`font-light transition-colors hover:text-primary focus-visible:text-primary ${
-            pathname === href ? 'text-primary' : ''
-          }`}
+          className={'font-light'}
           aria-label={label}
           onClick={() => onNavigate?.()}
         >

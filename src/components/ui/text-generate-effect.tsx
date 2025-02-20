@@ -1,5 +1,4 @@
 'use client'
-
 import { motion, stagger, useAnimate } from 'framer-motion'
 import { useEffect } from 'react'
 
@@ -55,7 +54,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn('font-bold', className)}>
       <div className="mt-4">
-        <div className="text-2xl leading-snug tracking-wide text-black dark:text-white">
+        <div className="text-xl font-semibold leading-8 tracking-wide text-black dark:text-white">
           {renderWords()}
         </div>
       </div>
