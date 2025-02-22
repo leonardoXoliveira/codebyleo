@@ -1,7 +1,7 @@
 import { Spotlight } from '@/components/ui/spotlight-new'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 
-const DESCRIPTION = `I'm a software engineer with a focus on best practices, developer experience, performance optimization, and scalability, passionate about sharing my knowledge with others.`
+const DESCRIPTION = `Software engineer by day, bug hunter by... also day. Building things that work fast and break less often than my New Year's resolutions. Crafting scalable solutions and developer experiences that spark more joy than a perfectly formatted codebase. Sharing what I learn so others can avoid my 3 AM debugging adventures.`
 
 export default function Home() {
   return (
