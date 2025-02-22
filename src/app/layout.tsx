@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: '%s | codebyleo'
   },
   description:
-    'A personal website showcasing my projects, thoughts, and journey in software development.'
+    'A personal portfolio and blog website showcasing my thoughts, projects, and journey in software development.'
 }
 
 export default function RootLayout({
