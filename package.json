@@ -1,13 +1,21 @@
 {
   "name": "codebyleo",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
+    "ci": "turbo run lint build test:e2e:ci",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,mjs,yml,yaml,css,json}\"",
     "typecheck": "turbo run typecheck",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "test:e2e:ci": "turbo run test:e2e:ci"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",

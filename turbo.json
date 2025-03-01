@@ -14,9 +14,17 @@
     "typecheck": {
       "dependsOn": ["^typecheck"]
     },
+    "test": {},
+    "test:e2e": {
+      "cache": false
+    },
+    "test:e2e:ci": {
+      "dependsOn": ["^build"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
     }
-  }
+  },
+  "globalPassThroughEnv": ["PLAYWRIGHT_*"]
 }
