@@ -5,7 +5,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,mjs,yml,yaml,css,json}\"",
     "typecheck": "turbo run typecheck",
     "prepare": "husky"
   },
@@ -13,7 +13,6 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
     "prettier": "^3.5.0",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
@@ -23,14 +22,5 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "turbo lint --filter=[origin/main]... --",
-      "turbo format --filter=[origin/main]... --"
-    ],
-    "*.{md,mdx,mjs,yml,yaml,css,json}": [
-      "prettier --write"
-    ]
   }
 }

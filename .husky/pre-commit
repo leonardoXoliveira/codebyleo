@@ -1,5 +1,6 @@
 echo "🚀 Running checks..."
 
-pnpm lint-staged
+pnpm lint
+pnpm format
 
 echo "✅ Code looking good! Proceeding with commit..."
