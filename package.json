@@ -10,7 +10,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,mjs,yml,yaml,css,json}\"",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,md,mdx,mjs,yml,css,json}\"",
     "typecheck": "turbo run typecheck",
     "prepare": "husky",
     "test": "turbo run test",
