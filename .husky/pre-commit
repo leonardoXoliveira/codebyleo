@@ -1,4 +1,5 @@
-echo "🚀 Running lint and format checks..."
-npx turbo lint format
+echo "🚀 Running checks..."
+
+pnpm lint-staged
 
 echo "✅ Code looking good! Proceeding with commit..."

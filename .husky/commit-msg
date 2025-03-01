@@ -1,6 +1,5 @@
-echo "📝 Checking commit message format..."
-npx --no -- commitlint --edit ${1} || (
-    echo "❌ Oops! Your commit message doesn't follow the convention.";
-    false;
-)
+echo "🔍 Checking commit message..."
+
+pnpm commitlint --edit ${1}
+
 echo "✅ Commit message looks good!"
