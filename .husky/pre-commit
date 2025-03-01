@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🔍 Checking your code..."
+npx lint-staged || (
+    echo "❌ Oops! Code check failed. Please fix the errors above.";
+    false;
+)
+echo "✨ Code looking good! Proceeding with commit..."

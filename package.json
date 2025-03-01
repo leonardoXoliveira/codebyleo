@@ -6,15 +6,30 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "typecheck": "turbo run typecheck",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "husky": "^9.1.7",
     "prettier": "^3.5.0",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "turbo": "^2.4.4",
     "typescript": "5.7.3"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "lint-staged": {
+    "(apps|packages)/**/*.{js,jsx,ts,tsx}": [
+      "turbo lint --filter=[origin/main]... --",
+      "turbo format --filter=[origin/main]... --"
+    ],
+    "*.{json,md,yml}": [
+      "prettier --write"
+    ]
   }
 }

@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "📝 Checking commit message format..."
+npx --no -- commitlint --edit ${1} || (
+    echo "❌ Oops! Your commit message doesn't follow the convention.";
+    false;
+)
+echo "✅ Commit message looks good!"
