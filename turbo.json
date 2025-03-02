@@ -17,10 +17,12 @@
     "test": {},
     "test:coverage": {},
     "test:e2e": {
-      "cache": false
+      "cache": false,
+      "outputs": ["apps/web/coverage/**"]
     },
     "test:e2e:ci": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": ["packages/e2e/playwright-report/**"]
     },
     "dev": {
       "cache": false,

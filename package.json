@@ -6,7 +6,6 @@
     "packages/*"
   ],
   "scripts": {
-    "ci": "turbo run lint build test:coverage test:e2e:ci",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -16,7 +15,8 @@
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
     "test:e2e": "turbo run test:e2e",
-    "test:e2e:ci": "turbo run test:e2e:ci"
+    "test:e2e:ci": "turbo run test:e2e:ci",
+    "ci": "turbo run lint build test:coverage test:e2e:ci"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
