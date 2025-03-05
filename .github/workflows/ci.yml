@@ -20,6 +20,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --prefer-offline --frozen-lockfile
 
+      # Cache Playwright browsers binaries to avoid downloading them on every run is not recommended since the amount of time it takes to restore the cache is comparable to the time it takes to download the binaries.
+      # https://playwright.dev/docs/ci#caching
       - name: Install Playwright browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpx playwright install --with-deps
